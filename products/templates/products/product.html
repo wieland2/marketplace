@@ -3,6 +3,7 @@
 {% block content %}
 
 <div style="border: black solid 1px;">
+  <img style="width: 250px;" src="{{product.featured_image.url}}">
   <h1>{{product.title}}</h1>
   <h3>£{{product.price}} • {{product.size}}</h3>
   <p>{{product.description}}</p>

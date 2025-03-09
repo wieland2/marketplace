@@ -3,15 +3,6 @@ import uuid
 
 class Product(models.Model):
 
-    SIZES = {
-        "XXS": "XXS",
-        "XS": "XS",
-        "S": "S",
-        "M": "M",
-        "L": "L",
-        "XL": "XL",
-        "XXL": "XXL",
-    }
 
     SIZES = [
         ("XXS", "XXS"), ("XS", "XS"), ("S", "S"),
@@ -21,6 +12,7 @@ class Product(models.Model):
     title = models.CharField(max_length=200)
     price = models.FloatField()
     description = models.TextField(max_length=800)
+    featured_image = models.ImageField(null=True, blank=True, default="default_image.webp")
     size = models.CharField(max_length=3, choices=SIZES )
     tags = models.ManyToManyField('Tag', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
