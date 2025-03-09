@@ -2,6 +2,18 @@
 
 {% block content %}
 
-<h1>This is project {{pk}}</h1>
+<div style="border: black solid 1px;">
+  <h1>{{product.title}}</h1>
+  <h3>£{{product.price}} • {{product.size}}</h3>
+  <p>{{product.description}}</p>
+
+  {% for tag in tags %}
+  <span style="border-color: black;">{{tag}}</span>
+  {% endfor %}
+  <a href="{% url 'update-product' product.id %}">Edit Product</a>
+  <a href="{% url 'delete-product' product.id%}">Delete Product</a>
+</div>
+
+
 
 {% endblock content %}
