@@ -4,9 +4,11 @@
 
 <div style="border: black solid 1px;">
   <img style="width: 250px;" src="{{product.featured_image.url}}">
+  <h1>{{product.owner.name}}</h1>
   <h1>{{product.title}}</h1>
   <h3>£{{product.price}} • {{product.size}}</h3>
   <p>{{product.description}}</p>
+
 
   {% for tag in tags %}
   <span style="border-color: black;">{{tag}}</span>

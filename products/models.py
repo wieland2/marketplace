@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import Profile
 import uuid
 
 class Product(models.Model):
@@ -9,6 +10,7 @@ class Product(models.Model):
         ( "M", "M"), ("L", "L"), ("XL", "XL"), ("XXL", "XXL")
     ]
 
+    owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL )
     title = models.CharField(max_length=200)
     price = models.FloatField()
     description = models.TextField(max_length=800)
