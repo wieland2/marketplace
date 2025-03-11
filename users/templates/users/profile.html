@@ -1,0 +1,19 @@
+<img style="width: 200px; display: block;" src="{{profile.profile_image.url }}">
+<a href="{% url 'profile' profile.id %}">{{profile.name}}</a>
+<h4>{{profile.username}}</h4>
+<p>{{profile.bio | slice:"150"}}</p>
+
+
+{% for skill in skills %}
+<span>{{skill}}</span>
+{% endfor %}
+
+
+<div>
+  {% for product in profile.product_set.all %}
+  <h1>{{product.title}}</h1>
+  <span>{{product.price}}</span>
+  <span>{{product.size}}</span>
+  <p>{{product.description}}</p>
+  {% endfor %}
+</div>
